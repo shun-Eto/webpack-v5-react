@@ -1,6 +1,6 @@
-# <span style="color:rgb(40,40,40)">**webpack-v5-react**</span>
+# <span style="color:#4E342E">**webpack-v5-react**</span>
 
-## **Description**
+## <span style="color:#4E342E">**Description**</span>
 
 Webpack-v.5 を用いた React の最小ディレクトリ構成
 
