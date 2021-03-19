@@ -6,20 +6,18 @@ const webpack = require("webpack");
 const DOMAIN_API = JSON.stringify("http://localhost:4000");
 
 const config = merge(baseConfig, {
-	mode: "development",
-	devServer: {
-		contentBase: "dist",
-		open: true,
-		//  https://qiita.com/shoota/items/b5aeb5d3e54a971ad67b
-		historyApiFallback: true,
-	},
-	plugins: [
-		new webpack.DefinePlugin({
-			"process.env": {
-				DOMAIN_API,
-			},
-		}),
-	],
+  mode: "development",
+  devServer: {
+    contentBase: "dist",
+    open: true,
+    historyApiFallback: true,
+    port: 3000
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": { DOMAIN_API }
+    })
+  ]
 });
 
 module.exports = config;
