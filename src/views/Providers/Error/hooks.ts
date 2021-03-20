@@ -9,7 +9,7 @@ const useHooks = () => {
   const setContextError = (message: string, statusCode: number) => {
     setMessage(message);
     setStatusCode(statusCode);
-    history.push("/test");
+    history.push("/");
   };
 
   const setContextErrorDone = () => {

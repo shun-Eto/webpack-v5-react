@@ -7,6 +7,9 @@ import Error500 from "./500";
 //  hooks
 import useHooks from "./hooks";
 
+//  types
+import { ErrorProps } from "~src/types/environment";
+
 interface ErrorContextInterface {
   message: string | null;
   statusCode: number | null;
@@ -25,18 +28,14 @@ const ErrorProvider: React.FC = props => {
     setContextError,
     setContextErrorDone
   } = useHooks();
+  const error: ErrorProps = { statusCode, message };
 
   return (
     <ErrorContext.Provider
-      value={{
-        message,
-        statusCode,
-        setContextError,
-        setContextErrorDone
-      }}
+      value={{ message, statusCode, setContextError, setContextErrorDone }}
     >
-      {400 <= statusCode && statusCode < 500 && <Error400 />}
-      {500 <= statusCode && statusCode < 600 && <Error500 />}
+      {400 <= statusCode && statusCode < 500 && <Error400 error={error} />}
+      {500 <= statusCode && statusCode < 600 && <Error500 error={error} />}
       {props.children}
     </ErrorContext.Provider>
   );

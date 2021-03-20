@@ -1,13 +1,46 @@
 import React from "react";
 
-//  mui components
-import { Modal } from "@material-ui/core";
+//  hooks
+import { useError } from "~views/Providers/Error";
 
-const Component: React.FC = () => {
+//  styled components
+import {
+  Message,
+  StatusCode,
+  Head,
+  Body,
+  StartAdornment,
+  Detail,
+  Actions,
+  ModalWithContainer
+} from "./styles";
+
+//  types
+import { ErrorProps } from "~src/types/environment";
+
+interface ComponentProps {
+  error: ErrorProps;
+}
+const Component: React.FC<ComponentProps> = props => {
+  const { error } = props;
+  const { setContextErrorDone } = useError();
+
+  const handleOnClose = () => {
+    setContextErrorDone();
+  };
+
   return (
-    <Modal open={true} onClose={() => console.log("onClose")}>
-      <div>500</div>
-    </Modal>
+    <ModalWithContainer open={true} onClose={handleOnClose}>
+      <Head />
+      <Body>
+        <StartAdornment />
+        <Detail>
+          <StatusCode statusCode={error.statusCode} />
+          <Message value={error.message} />
+          <Actions onClose={handleOnClose} />
+        </Detail>
+      </Body>
+    </ModalWithContainer>
   );
 };
 
