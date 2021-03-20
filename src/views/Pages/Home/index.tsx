@@ -7,16 +7,23 @@ import { useSelector } from "react-redux";
 import { RootState } from "~redux/store/reducer";
 import { Button } from "@material-ui/core";
 
+import { useError } from "~views/Providers/Error";
+import { testfunction } from "~api/testModule";
+
 const Component: React.FC = () => {
   const dispatch = useDispatch();
   const { tasks } = useSelector((state: RootState) => state.tasks);
+
+  const { setContextError } = useError();
 
   const handleOnClick = () => {
     dispatch(addTask("test"));
   };
 
-  const error = () => {
-    throw Error("error!");
+  const handleOnButtonClick = async () => {
+    const test = await testfunction();
+    console.log("test", test.status);
+    setContextError("test", test.status);
   };
 
   return (
@@ -27,7 +34,7 @@ const Component: React.FC = () => {
       <button onClick={handleOnClick}>test</button>
       <div>test</div>
       <div>test</div>
-      <Button variant="contained" onClick={error}>
+      <Button variant="contained" onClick={handleOnButtonClick}>
         test
       </Button>
     </ContainerWithHF>

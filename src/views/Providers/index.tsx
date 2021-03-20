@@ -10,21 +10,24 @@ import {
 } from "@material-ui/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import ReduxProvider from "./Redux";
+import ErrorProvider from "./Error";
 
 //  styles
 import { muiTheme, origTheme } from "~assets/styles/theme";
 
 const Providers: React.FC = props => {
   return (
-    <ReduxProvider>
-      <MuiThemeProvider theme={{ ...muiTheme, ...origTheme }}>
-        <MuiStylesProvider injectFirst>
-          <StyledThemeProvider theme={{ ...muiTheme, ...origTheme }}>
-            <Router>{props.children}</Router>
-          </StyledThemeProvider>
-        </MuiStylesProvider>
-      </MuiThemeProvider>
-    </ReduxProvider>
+    <Router>
+      <ReduxProvider>
+        <MuiThemeProvider theme={{ ...muiTheme, ...origTheme }}>
+          <MuiStylesProvider injectFirst>
+            <StyledThemeProvider theme={{ ...muiTheme, ...origTheme }}>
+              <ErrorProvider>{props.children}</ErrorProvider>
+            </StyledThemeProvider>
+          </MuiStylesProvider>
+        </MuiThemeProvider>
+      </ReduxProvider>
+    </Router>
   );
 };
 
