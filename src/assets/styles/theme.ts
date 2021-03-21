@@ -1,44 +1,40 @@
-import { createMuiTheme, Theme as MuiTheme } from "@material-ui/core";
-import CreateColorPicker from "./CreateColorPicker/Class";
-import CreateFontSize from "./CreateFontSize/Class";
+import CreateFontSize from "./CreateFontSize";
+import CreateColorPicker from "./CreateColorPicker";
+import CreateScrollVisible from "./CreateScrollVisible";
 
-const createCP = new CreateColorPicker();
-const createFS = new CreateFontSize();
+//  mui
+import { createMuiTheme, Theme as MuiTheme } from "@material-ui/core";
+
+//  class
+const createFontSize = new CreateFontSize();
+const createColorPicker = new CreateColorPicker();
+const createScrollVisible = new CreateScrollVisible();
 
 interface OrigTheme {
-  fontSize: typeof createFS.fontSize;
-  colorPicker: typeof createCP.colorPicker;
+  fontSize: typeof createFontSize.fontSize;
+  colorPicker: typeof createColorPicker.colorPicker;
+  scrollVisible: typeof createScrollVisible.scrollVisible;
 }
-
 const origTheme: OrigTheme = {
-  fontSize: key => createFS.fontSize(key),
-  colorPicker: (color, option) => createCP.colorPicker(color, option)
+  fontSize: key => createFontSize.fontSize(key),
+  colorPicker: (color, option) => createColorPicker.colorPicker(color, option),
+  scrollVisible: visible => createScrollVisible.scrollVisible(visible)
 };
 
 const muiTheme = createMuiTheme({
   palette: {
-    primary: {
-      main: "rgba(40,40,40,1)"
-    },
-    secondary: {
-      main: "rgba(55,5,5,1)"
-    },
-    text: {
-      primary: "rgba(240,242,236,1)",
-      secondary: "rgba(240,242,236,1)"
-    }
+    primary: { main: "rgba(40,40,40,1)" },
+    secondary: { main: "rgba(55,5,5,1)" },
+    text: { primary: "rgba(240,242,236,1)", secondary: "rgba(240,242,236,1)" }
   }
 });
 
 export type Theme = OrigTheme & MuiTheme;
+export { muiTheme, origTheme };
 
-//  extends styled component theme interface
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
 }
-
-//  extends mui theme interface
 declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme extends OrigTheme {}
 }
-export { muiTheme, origTheme };

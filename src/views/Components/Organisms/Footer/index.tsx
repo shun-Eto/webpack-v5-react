@@ -1,14 +1,13 @@
 import * as React from "react";
 
-import { Footer } from "./styles";
+import { StyledToolbar } from "./styles";
 
-interface ComponentProps {
-  componentRef?: React.RefObject<HTMLDivElement>;
+export interface FooterProps {
+  height?: number;
 }
-const Component: React.FC<ComponentProps> = props => (
-  <Footer ref={props.componentRef} color="secondary">
-    Footer
-  </Footer>
-);
+const Footer: React.FC<FooterProps> = props => {
+  const { height } = props;
+  return <StyledToolbar height={height}>Footer</StyledToolbar>;
+};
 
-export default Component;
+export default Footer;

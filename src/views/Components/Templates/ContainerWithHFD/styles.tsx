@@ -10,6 +10,10 @@ import {
   withStyles
 } from "@material-ui/core";
 
+//  types
+import { DrawerProps } from "~views/Components/Organisms/Drawer";
+import { HeaderProps } from "../../Organisms/Header";
+
 export const Wrapper = styled.div(({ theme }) => {
   return {
     position: "fixed",
@@ -20,9 +24,8 @@ export const Wrapper = styled.div(({ theme }) => {
 });
 
 interface StyledContainerProps extends ContainerProps {
-  header?: {
-    height?: number;
-  };
+  header?: HeaderProps;
+  drawer: DrawerProps;
 }
 export const StyledContainer = withStyles(theme =>
   createStyles({
@@ -34,11 +37,19 @@ export const StyledContainer = withStyles(theme =>
     }
   })
 )((props: StyledContainerProps) => {
-  const { header } = props;
+  const { header, drawer } = props;
+  const { open, maxWidth, minWidth, left, right } = drawer;
+  const width = open ? maxWidth : minWidth;
   const classes = makeStyles(theme =>
     createStyles({
       Container: {
-        paddingTop: header?.height
+        paddingTop: header?.height,
+        paddingLeft: left ? width : 0,
+        paddingRight: right ? width : 0,
+        transition: theme.transitions.create("padding", {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.leavingScreen
+        })
       }
     })
   )();

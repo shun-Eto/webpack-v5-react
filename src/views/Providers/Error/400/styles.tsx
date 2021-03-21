@@ -15,11 +15,11 @@ import {
 //  fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface ModalWithContainer {
+interface ModalWithContainerProps {
   open: boolean;
   onClose: () => void;
 }
-export const ModalWithContainer: React.FC<ModalWithContainer> = props => {
+export const ModalWithContainer: React.FC<ModalWithContainerProps> = props => {
   const classes = makeStyles(theme =>
     createStyles({
       modal: {
@@ -32,7 +32,7 @@ export const ModalWithContainer: React.FC<ModalWithContainer> = props => {
         backgroundColor: theme.colorPicker("white"),
         margin: theme.spacing(3),
         padding: theme.spacing(0),
-        overflow: "hidden"
+        ...theme.scrollVisible({ y: true })
       }
     })
   )();

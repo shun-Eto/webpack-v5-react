@@ -1,14 +1,28 @@
-import styled from "styled-components";
+import React from "react";
 
-import { Toolbar, ToolbarProps } from "@material-ui/core";
+import {
+  createStyles,
+  makeStyles,
+  Toolbar,
+  ToolbarProps,
+  withStyles
+} from "@material-ui/core";
 
-interface FooterProps extends ToolbarProps {}
-export const Footer = styled(Toolbar)<FooterProps>(({ theme }) => ({
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  height: 50,
-  width: "100%",
-  backgroundColor: theme.palette.secondary.main,
-  color: theme.palette.text.secondary
-}));
+interface StyledToolbarProps extends ToolbarProps {
+  height?: number;
+}
+export const StyledToolbar = withStyles(theme =>
+  createStyles({
+    root: {}
+  })
+)((props: StyledToolbarProps) => {
+  const { height } = props;
+  const classes = makeStyles(theme =>
+    createStyles({
+      Toolbar: {
+        height
+      }
+    })
+  )();
+  return <Toolbar {...props} className={classes.Toolbar} />;
+});

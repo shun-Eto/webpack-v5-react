@@ -1,16 +1,37 @@
-import styled from "styled-components";
+import React from "react";
 
-import { AppBar, AppBarProps } from "@material-ui/core";
-import { CSSProperties } from "@material-ui/core/styles/withStyles";
+//  mui components
+import {
+  AppBar,
+  AppBarProps,
+  createStyles,
+  makeStyles,
+  Toolbar,
+  ToolbarProps,
+  withStyles
+} from "@material-ui/core";
 
-export interface HeaderProps extends AppBarProps {
-  style?: CSSProperties;
+export const StyledAppbar = withStyles(theme =>
+  createStyles({
+    root: {}
+  })
+)((props: AppBarProps) => <AppBar {...props} />);
+
+interface StyledToolbarProps extends ToolbarProps {
+  height?: number;
 }
-export const Header = styled(AppBar)<HeaderProps>(({ style, theme }) => ({
-  height: 55,
-  width: "100%",
-  padding: theme.spacing(1),
-  position: "absolute",
-  top: 0,
-  left: 0
-}));
+export const StyledToolbar = withStyles(theme =>
+  createStyles({
+    root: {}
+  })
+)((props: StyledToolbarProps) => {
+  const { height } = props;
+  const classes = makeStyles(theme =>
+    createStyles({
+      Toolbar: {
+        height
+      }
+    })
+  )();
+  return <Toolbar {...props} className={classes.Toolbar} />;
+});

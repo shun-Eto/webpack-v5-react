@@ -9,11 +9,13 @@ import { Button } from "@material-ui/core";
 
 import { useError } from "~views/Providers/Error";
 import { testfunction } from "~api/testModule";
+import { useHistory } from "react-router";
+import pathnames from "~src/assets/utils/pathnames";
 
 const Component: React.FC = () => {
   const dispatch = useDispatch();
   const { tasks } = useSelector((state: RootState) => state.tasks);
-
+  const history = useHistory();
   const { setContextError } = useError();
 
   const handleOnClick = () => {
@@ -36,6 +38,9 @@ const Component: React.FC = () => {
       <div>test</div>
       <Button variant="contained" onClick={handleOnButtonClick}>
         test
+      </Button>
+      <Button variant="contained" onClick={() => history.push(pathnames.Page1)}>
+        Page1
       </Button>
     </ContainerWithHF>
   );

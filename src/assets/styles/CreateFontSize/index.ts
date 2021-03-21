@@ -15,7 +15,12 @@ export default class CreateFontSize {
 
   keys: Key[] = ["xs", "sm", "md", "lg", "xl", "icon"];
 
-  fontSize(key?: Key) {
+  /**
+   * 設定済みのフォントサイズを取得
+   * @param key valuesに設定したkey
+   * @returns フォントサイズ
+   */
+  fontSize(key?: Key): string | number {
     if (key) {
       return typeof this.values[key] === "number"
         ? `${this.values[key]}${this.unit}`

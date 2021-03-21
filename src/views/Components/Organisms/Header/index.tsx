@@ -1,19 +1,18 @@
 import * as React from "react";
 
-import { Header } from "./styles";
+//  styled components
+import { StyledAppbar, StyledToolbar } from "./styles";
 
-import { CSSProperties } from "@material-ui/core/styles/withStyles";
-
-interface ComponentProps {
-  componentRef?: React.RefObject<HTMLDivElement>;
-  style?: CSSProperties;
+export interface HeaderProps {
+  height?: number;
 }
-const Component: React.FC<ComponentProps> = props => {
+const Header: React.FC<HeaderProps> = props => {
+  const { height } = props;
   return (
-    <Header ref={props.componentRef} style={props.style}>
-      Header
-    </Header>
+    <StyledAppbar>
+      <StyledToolbar height={height}>Header</StyledToolbar>
+    </StyledAppbar>
   );
 };
 
-export default Component;
+export default Header;
