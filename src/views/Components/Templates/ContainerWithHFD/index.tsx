@@ -15,6 +15,7 @@ const Component: React.FC<ComponentProps> = props => {
   const footer: FooterProps = { height: 70 };
   const [open, setOpen] = React.useState(false);
   const drawer: DrawerProps = { open, minWidth: 65, maxWidth: 200, left: true };
+
   return (
     <Wrapper>
       <Header {...header} />

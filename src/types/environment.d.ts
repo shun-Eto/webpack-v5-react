@@ -4,6 +4,6 @@ export interface Languages<T> {
 }
 
 export interface ErrorProps {
-  statusCode: numher;
+  statusCode: number;
   message: string | null;
 }
