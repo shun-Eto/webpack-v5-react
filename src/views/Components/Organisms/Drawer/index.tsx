@@ -4,14 +4,13 @@ import React from "react";
 import {
   Wrapper,
   MainMenu,
-  SecondMenu,
   ThirdMenu,
   StyledListItem,
   StyledDivider
 } from "./styles";
 
 //  mui components
-import { Divider, List } from "@material-ui/core";
+import { List } from "@material-ui/core";
 
 //  types
 import { ListElementType } from "~@types/component";
