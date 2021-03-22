@@ -15,9 +15,10 @@ export const Wrapper = styled.div<WrapperProps>(
       }),
       position: "absolute",
       height: "100%",
-      backgroundColor: theme.colorPicker("red", { code: "100" }),
       left: left ? 0 : "unset",
-      right: right ? 0 : "unset"
+      right: right ? 0 : "unset",
+      backgroundColor: theme.colorPicker("black"),
+      color: theme.colorPicker("white")
     };
   }
 );

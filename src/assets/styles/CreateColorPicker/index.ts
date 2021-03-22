@@ -2,7 +2,7 @@ import { Color, Colors } from "./types";
 
 export default class CreateColorPicker {
   colors: Colors = {
-    black: { root: "rgba(0,0,0, 1)" },
+    black: { root: "rgba(40,40,40, 1)" },
     white: { root: "rgba(240,242,236, 1)" },
     blueGrey: {
       root: "rgba(96,125,139,1)",

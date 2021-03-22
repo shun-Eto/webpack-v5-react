@@ -18,7 +18,7 @@ const Component: React.FC<ComponentProps> = props => {
     open,
     minWidth: 65,
     maxWidth: 200,
-    right: true,
+    left: true,
     handleOpenBtnClicked: () => setOpen(!open)
   };
 

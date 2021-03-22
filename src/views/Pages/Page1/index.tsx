@@ -1,5 +1,6 @@
-import { Button } from "@material-ui/core";
 import React from "react";
+
+import { Button } from "@material-ui/core";
 import { useHistory } from "react-router";
 import pathnames from "~src/assets/utils/pathnames";
 
