@@ -1,3 +1,3 @@
-import { StyledTextFiled } from "./styles";
+import { StyledTextFiled, SearchInput } from "./styles";
 
-export { StyledTextFiled };
+export { StyledTextFiled, SearchInput };

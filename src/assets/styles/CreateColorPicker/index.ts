@@ -321,6 +321,12 @@ export default class CreateColorPicker {
     this.colors = { ...this.colors, ...colors };
   }
 
+  /**
+   * 指定カラーの文字列をオプション付与を考慮して取得
+   * @param color color keys
+   * @param option code , opacity
+   * @returns RGBA Color
+   */
   colorPicker(
     color: keyof Colors,
     option?: {

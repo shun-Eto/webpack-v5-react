@@ -7,6 +7,7 @@ export interface DrawerProps {
   maxWidth?: number;
   left?: boolean;
   right?: boolean;
+  handleOpenBtnClicked?: () => void;
 }
 const Drawer: React.FC<DrawerProps> = props => {
   return <Wrapper {...props} />;

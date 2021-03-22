@@ -1,8 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import tasksModule from "../slices/modules1";
+import accountSlice from "../slices/account";
+import environmentSlice from "../slices/environment";
 
 const rootReducer = combineReducers({
-  tasks: tasksModule.reducer
+  account: accountSlice.reducer,
+  environment: environmentSlice.reducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

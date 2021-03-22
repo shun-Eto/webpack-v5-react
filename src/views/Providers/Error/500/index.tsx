@@ -16,7 +16,7 @@ import {
 } from "./styles";
 
 //  types
-import { ErrorProps } from "~src/types/environment";
+import { ErrorProps } from "~src/@types/environment";
 
 interface ComponentProps {
   error: ErrorProps;

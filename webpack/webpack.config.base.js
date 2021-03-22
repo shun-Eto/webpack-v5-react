@@ -28,7 +28,8 @@ const config = {
           { loader: MiniCssExtractPlugin.loader, options: {} },
           "css-loader"
         ]
-      }
+      },
+      { test: /\.png$/, loader: "url-loader" }
     ]
   },
 
@@ -45,7 +46,7 @@ const config = {
       "~api": path.resolve("/src/api"),
       "~assets": path.resolve("/src/assets"),
       "~redux": path.resolve("/src/redux"),
-      "~types": path.resolve("/src/types"),
+      "~@types": path.resolve("/src/@types"),
       "~views": path.resolve("/src/views")
     }
   },

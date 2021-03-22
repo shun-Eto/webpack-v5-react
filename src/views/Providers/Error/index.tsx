@@ -8,7 +8,7 @@ import Error500 from "./500";
 import useHooks from "./hooks";
 
 //  types
-import { ErrorProps } from "~src/types/environment";
+import { ErrorProps } from "~src/@types/environment";
 
 interface ErrorContextInterface {
   message: string | null;

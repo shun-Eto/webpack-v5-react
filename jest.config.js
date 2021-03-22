@@ -16,7 +16,7 @@ module.exports = {
     "^~api(.*)$": "<rootDir>/src/api/$1",
     "^~assets(.*)$": "<rootDir>/src/assets/$1",
     "^~redux(.*)$": "<rootDir>/src/redux/$1",
-    "^~types(.*)$": "<rootDir>/src/types/$1",
+    "^~@types(.*)$": "<rootDir>/src/@types/$1",
     "^~views(.*)$": "<rootDir>/src/views/$1"
   },
   transformIgnorePatterns: ["<rootDir>/node_modules/"]
