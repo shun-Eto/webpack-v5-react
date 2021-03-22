@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Languages } from "~src/@types/environment";
 
 interface Status {
   signin: { fetching: boolean; fetched: boolean };
@@ -7,6 +8,7 @@ interface Status {
 interface Data {
   token: string;
   theme: "primary" | "seconday";
+  lang: keyof Languages<string>;
 }
 
 interface State {
@@ -21,7 +23,8 @@ const initialState: State = {
   },
   data: {
     token: localStorage.getItem("token") || "",
-    theme: "primary"
+    theme: "primary",
+    lang: "jp"
   }
 };
 

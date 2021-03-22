@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
   environment: environmentSlice.reducer
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type StoreState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;

@@ -1,7 +1,10 @@
+import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { Languages } from "./environment";
 
-export interface ListItemProps<T> {
+export interface ListElementType<T> {
   id: string;
   value: T;
   label: T | Languages<T>;
+  faIcon?: IconProps;
 }
