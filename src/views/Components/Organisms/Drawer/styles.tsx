@@ -77,12 +77,14 @@ export const StyledListItem = (props: StyledListItemProps) => {
   return (
     <ListItem button>
       <ListItemIcon className={classes.icon}>
-        <FontAwesomeIcon
-          icon={item.faIcon}
-          color="white"
-          fixedWidth
-          size="lg"
-        />
+        {item.faIcon && (
+          <FontAwesomeIcon
+            icon={item.faIcon}
+            color="white"
+            fixedWidth
+            size="lg"
+          />
+        )}
       </ListItemIcon>
       <ListItemText className={classes.text}>{label}</ListItemText>
     </ListItem>
