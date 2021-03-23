@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 //  atomic components
 import { DrawerProps } from "~views/Components/Organisms/Drawer";
+import { SearchInput } from "~views/Components/Atoms/TextFiled";
 
-//  mui components
+//  lib components
 import {
   AppBar,
   AppBarProps,
@@ -22,7 +23,6 @@ import {
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { SearchInput } from "../../Atoms/TextFiled";
 
 export const StyledAppbar = withStyles(theme =>
   createStyles({

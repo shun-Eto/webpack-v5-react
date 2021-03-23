@@ -1,6 +1,6 @@
 import React from "react";
 
-//  mui components
+//  lib components
 import {
   Grow,
   IconButton,
@@ -15,7 +15,7 @@ import {
 import { createStyles, withStyles } from "@material-ui/styles";
 
 //  types
-import { ListItemProps } from "~@types/component";
+import { ListElementType } from "~@types/component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
@@ -31,7 +31,7 @@ export const StyledTextFiled = withStyles(theme =>
  * @name SearchInput
  */
 export interface SearchInputProps {
-  items: ListItemProps<string>[];
+  items: ListElementType<string>[];
 }
 export const SearchInput = (props: SearchInputProps) => {
   const classes = makeStyles(theme =>

@@ -2,7 +2,7 @@ import CreateFontSize from "./CreateFontSize";
 import CreateColorPicker from "./CreateColorPicker";
 import CreateScrollVisible from "./CreateScrollVisible";
 
-//  mui
+//  lib components
 import { createMuiTheme, Theme as MuiTheme } from "@material-ui/core";
 
 //  class

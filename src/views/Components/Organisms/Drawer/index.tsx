@@ -1,15 +1,12 @@
 import React from "react";
 
 //  styled components
-import {
-  Wrapper,
-  MainMenu,
-  ThirdMenu,
-  StyledListItem,
-  StyledDivider
-} from "./styles";
+import { Wrapper, StyledDivider } from "./styles";
 
-//  mui components
+//  atomic components
+import { StyledListItem } from "~views/Components/Atoms/ListItem";
+
+//  lib components
 import { List } from "@material-ui/core";
 
 //  types
@@ -38,29 +35,24 @@ const Drawer: React.FC<DrawerProps> = props => {
     <Wrapper {...props}>
       {menu?.first && (
         <React.Fragment>
-          <MainMenu>
-            <List>
-              {menu.first.map((item, i) => (
-                <StyledListItem key={i} item={item} />
-              ))}
-            </List>
-          </MainMenu>
+          <List>
+            {menu.first.map((item, i) => (
+              <StyledListItem key={i} item={item} />
+            ))}
+          </List>
           <StyledDivider />
         </React.Fragment>
       )}
       {menu?.second && (
         <React.Fragment>
-          <MainMenu>
-            <List>
-              {menu.second.map((item, i) => (
-                <StyledListItem key={i} item={item} />
-              ))}
-            </List>
-          </MainMenu>
+          <List>
+            {menu.second.map((item, i) => (
+              <StyledListItem key={i} item={item} />
+            ))}
+          </List>
           <StyledDivider />
         </React.Fragment>
       )}
-      <ThirdMenu>Third</ThirdMenu>
     </Wrapper>
   );
 };

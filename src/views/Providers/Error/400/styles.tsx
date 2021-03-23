@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-//  mui components
+//  lib components
 import {
   Button,
   Container,
@@ -11,8 +11,6 @@ import {
   Paper,
   Typography
 } from "@material-ui/core";
-
-//  fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ModalWithContainerProps {

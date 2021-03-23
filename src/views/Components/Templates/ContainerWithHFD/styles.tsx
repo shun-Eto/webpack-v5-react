@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-//  mui components
+//  lib components
 import { Container, createStyles, makeStyles } from "@material-ui/core";
 
 //  types
