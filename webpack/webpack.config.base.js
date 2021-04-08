@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  entry: path.resolve("/src/index.tsx"),
+  entry: path.resolve(__dirname, "../src/index.tsx"),
   output: {
-    path: path.resolve("/dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js",
     publicPath: "/"
   },
@@ -42,12 +42,12 @@ const config = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
-      "~src": path.resolve("/src"),
-      "~api": path.resolve("/src/api"),
-      "~assets": path.resolve("/src/assets"),
-      "~redux": path.resolve("/src/redux"),
-      "~@types": path.resolve("/src/@types"),
-      "~views": path.resolve("/src/views")
+      "~src": path.resolve(__dirname, "../src"),
+      "~api": path.resolve(__dirname, "../src/api"),
+      "~assets": path.resolve(__dirname, "../src/assets"),
+      "~redux": path.resolve(__dirname, "../src/redux"),
+      "~@types": path.resolve(__dirname, "../src/@types"),
+      "~views": path.resolve(__dirname, "../src/views")
     }
   },
   plugins: [
