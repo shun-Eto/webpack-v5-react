@@ -22,7 +22,7 @@ const Component: React.FC = () => {
 
   return (
     <ContainerWithHF>
-      <div>test</div>
+      <div>Home Page</div>
       <div>test</div>
       <Button variant="contained" onClick={handleOnButtonClick}>
         test
