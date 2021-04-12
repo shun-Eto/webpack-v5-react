@@ -11,6 +11,7 @@
     "start:dev": "webpack serve --mode development --config ./webpack/webpack.config.dev",
     "build:dev": "webpack --mode development --config ./webpack/webpack.config.dev.js",
     "build:prod": "webpack --mode production --config ./webpack/webpack.config.prod.js",
+    "build:azure": "webpack --mode production --config ./webpack/webpack.config.prod.js",
     "test": "jest",
     "lint": "npx eslint --ext .js,.jsx,.ts,.tsx,.d.ts src/** __test__/** --fix"
   },
