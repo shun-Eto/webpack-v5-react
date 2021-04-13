@@ -23,7 +23,7 @@ const Component: React.FC = () => {
   return (
     <ContainerWithHF>
       <div>Home Page</div>
-      <div>Home Page</div>
+      <div>Dev Test</div>
       <Button variant="contained" onClick={handleOnButtonClick}>
         test
       </Button>
